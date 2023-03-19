@@ -17,11 +17,6 @@ main {
     padding: 20px;
 }
 
-img {
-    padding-top: 20px;
-    padding-left: 125px;
-}
-
 p {
     text-indent: 20px;
 }
@@ -85,4 +80,46 @@ ol>li>ul>li:hover {
 
 ol>li>ul>li:hover>a {
     color: black;
+}
+
+.zrzut {
+    float: left;
+    width: 200px;
+    height: 200px;
+    border: solid;
+    border-width: 1px;
+}
+
+.puzzel {
+    float: left;
+    width: 150px;
+    height: 150px;
+    border: solid;
+    border-width: 1px;
+}
+
+
+#gra {
+    margin: auto;
+    border: solid;
+    border-width: 1px;
+    width: 606px;
+    height: 606px;
+
+}
+
+#pojemnik {
+    padding-left: 20px;
+}
+
+#pojemnik>.puzzel>img {
+    width: 150px;
+    height: 150px;
+}
+
+#reset {
+    float: left;
+    margin: 20px;
+    width: 70px;
+    height: 50px;
 }
