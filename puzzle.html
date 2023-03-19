@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt PWI</title>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
+
+<body>
+    <div id="gra">
+        <div class="zrzut"></div>
+        <div class="zrzut"></div>
+        <div class="zrzut"></div>
+        <div class="zrzut"></div>
+        <div class="zrzut"></div>
+        <div class="zrzut"></div>
+        <div class="zrzut"></div>
+        <div class="zrzut"></div>
+        <div class="zrzut"></div>
+    </div>
+
+
+    <p>
+        Przeciągnij poniższe puzzle w puste miejsca wyżej. Dobrze się zastanów,
+        bo po upuszczeniu jednego puzzla i wzięciu drugiego, nie będziesz już
+        mógł wrócić do poprzedniego puzzla, ponieważ poziom trudności tych puzzli
+        jest bardzo wysoki. Będziesz mógł poruszać jedynie ostatnim wybranym puzzlem.
+        Kliknij "Od nowa", aby zacząć od nowa.
+    </p>
+    <div id="pojemnik">
+        <div class="puzzel">
+            <img src="img/puzle6.jpg" alt="zdjecie1">
+        </div>
+        <div class="puzzel">
+            <img src="img/puzle9.jpg" alt="zdjecie2">
+        </div>
+        <div class="puzzel">
+            <img src="img/puzle7.jpg" alt="zdjecie3">
+        </div>
+        <div class="puzzel">
+            <img src="img/puzle2.jpg" alt="zdjecie4">
+        </div>
+        <div class="puzzel">
+            <img src="img/puzle5.jpg" alt="zdjecie5">
+        </div>
+        <div class="puzzel">
+            <img src="img/puzle1.jpg" alt="zdjecie6">
+        </div>
+        <div class="puzzel">
+            <img src="img/puzle8.jpg" alt="zdjecie7">
+        </div>
+        <div class="puzzel">
+            <img src="img/puzle3.jpg" alt="zdjecie8">
+        </div>
+        <div class="puzzel">
+            <img src="img/puzle4.jpg" alt="zdjecie9">
+        </div>
+    </div>
+
+    <button id="reset" onclick="reset()">Od nowa</button>
+
+
+    <script>
+        var puzzle = document.getElementById("pojemnik").children;
+        var zrzuty = document.getElementById("gra").children;
+        var zlapany = null;
+
+        for (var i = 0; i < puzzle.length; i++) {
+            puzzle[i].ondragstart = function (event) {
+                zlapany = event.target;
+            }
+
+            zrzuty[i].ondragover = function (event) {
+                event.preventDefault();
+            }
+
+
+            zrzuty[i].ondrop = function (event) {
+                event.preventDefault();
+                this.appendChild(zlapany);
+            }
+        }
+
+        function reset() {
+            location.reload();
+        }
+    </script>
+
+</body>
+
+</html>
