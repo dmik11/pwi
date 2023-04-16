@@ -1,13 +1,21 @@
 body {
     background-color: lightgrey;
     position: relative;
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
     font-family: Caladea;
 }
 
+#container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    padding: 15px;
+}
+
 nav {
+    clear: both;
     background-color: dodgerblue;
     text-align: center;
 }
@@ -17,13 +25,29 @@ main {
     padding: 20px;
 }
 
-p {
-    text-indent: 20px;
+footer {
+    clear: both;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 p::first-letter {
     color: dodgerblue;
     font-size: xx-large;
+}
+
+img {
+    padding-left: 10%;
 }
 
 ol {
@@ -82,44 +106,52 @@ ol>li>ul>li:hover>a {
     color: black;
 }
 
-.zrzut {
-    float: left;
-    width: 200px;
-    height: 200px;
-    border: solid;
-    border-width: 1px;
+#menu2 {
+    display: none;
 }
 
-.puzzel {
-    float: left;
-    width: 150px;
-    height: 150px;
-    border: solid;
-    border-width: 1px;
+.nav1 {
+    float: none;
+    cursor: pointer;
+    width: auto;
+    padding: 30px;
+    color: black;
+    border: 1px solid black;
 }
 
+@media (max-width: 1000px) {
 
-#gra {
-    margin: auto;
-    border: solid;
-    border-width: 1px;
-    width: 606px;
-    height: 606px;
+    div#container,
+    header,
+    main,
+    nav,
+    footer {
+        width: auto;
+        margin: 0px;
+
+    }
+
+    #menu1 {
+        display: none
+    }
+
+    #menu2 {
+        display: block;
+        font-size: 20px;
+    }
+
+    img {
+        width: 520px;
+        height: 350px;
+    }
 
 }
 
-#pojemnik {
-    padding-left: 20px;
-}
+@media (max-width: 640px) {
 
-#pojemnik>.puzzel>img {
-    width: 150px;
-    height: 150px;
-}
+    img {
+        width: 300px;
+        height: 200px;
+    }
 
-#reset {
-    float: left;
-    margin: 20px;
-    width: 70px;
-    height: 50px;
 }
